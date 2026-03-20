@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4 {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    color: #222;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1e1f1f;
+    color: #f1f1f1;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #f1f1f1;
+}
+
+.edit-toggle button {
+    background: #2c2e2e;
+    border: none;
+    color: #f1f1f1;
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.edit-toggle button:hover {
+    background: #3e4141;
+}
+
+.container {
+    max-width: 1600px;  /* увеличено для 5 карточек */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Сетка для всех карточек (участники и остальные) */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+    justify-items: center;
+    margin-bottom: 40px;
+}
+
+/* Для секции участников оставляем ту же сетку, но если участников меньше, они не растягиваются */
+/* Общие стили для всех карт */
+.card_vertical_flexbox,
+.member_card_vertical_flexbox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;        /* занимает всю ширину ячейки сетки */
+    max-width: 280px;   /* ограничение, чтобы не были слишком широкими */
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.card_image {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.name_and_date_horizontal_flexbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 12px 12px 0;
+}
+
+.name_and_date_horizontal_flexbox h3 {
+    font-size: 1.2rem;
+    color: #222;
+}
+
+.date_info_vertical_flexbox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.card_predate_text,
+.card_date_text {
+    font-size: 0.7rem;
+    color: #555;
+}
+
+/* Убираем фон и левую границу */
+.stats-block {
+    margin: 12px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+}
+
+.stats-block p {
+    margin: 4px 0;
+    display: flex;
+    justify-content: space-between;
+    color: #333;
+}
+
+.album_songs_amount_text {
+    margin: 5px 12px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #424040;
+}
+
+hr {
+    margin: 8px 12px;
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+}
+
+.card_description_text {
+    margin: 0 12px 12px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #514f4f;
+}
+
+/* Специфичные стили для песен */
+.song_cover_and_album_horizontal_flexbox {
+    display: flex;
+    gap: 12px;
+    padding: 12px 12px 0;
+}
+
+.song_youtube_video {
+    width: 100%;
+    height: 160px;
+    border: none;
+    border-radius: 12px;
+}
+
+.album_info_vertical_flexbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+}
+
+.album_cover_image {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+.album_info_vertical_flexbox h4 {
+    margin: 6px 0 0;
+    font-size: 0.7rem;
+    text-align: center;
+    color: #757373;
+}
